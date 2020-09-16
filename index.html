@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #taiji {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media(max-width: 500px) {
+            #taiji {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        #taiji .box1 {
+            background-color: black;
+            width: 50%;
+            height: 100%;
+        }
+
+        #taiji .box3 {
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 100px;
+            background-color: black;
+        }
+
+        @media(max-width: 500px) {
+            #taiji .box3 {
+                left: 50px;
+            }
+
+            #taiji .box4 {
+                top: 100px;
+                left: 50px;
+            }
+        }
+
+        #taiji .box4 {
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            background-color: white;
+        }
+
+        @media(max-width: 500px) {
+            #taiji .box4 {
+                top: 100px;
+                left: 50px;
+            }
+        }
+
+        #taiji .box5 {
+            height: 50px;
+            width: 50px;
+            border-radius: 200px;
+            background-color: white;
+            position: absolute;
+            top: 75px;
+            left: 175px;
+        }
+
+        @media(max-width: 500px) {
+            #taiji .box5 {
+                height: 25px;
+                width: 25px;
+                top: 37.5px;
+                left: 87.5px;
+            }
+        }
+
+        #taiji .box6 {
+            height: 50px;
+            width: 50px;
+            border-radius: 200px;
+            background-color: black;
+            position: absolute;
+            top: 275px;
+            left: 175px;
+        }
+
+        @media(max-width: 500px) {
+            #taiji .box6 {
+                height: 25px;
+                width: 25px;
+                top: 137.5px;
+                left: 87.5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="taiji">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+        </div>
+    </div>
+</body>
+
+</html>
