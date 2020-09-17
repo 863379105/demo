@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .wrapper .header {
+            height: 100px;
+            background-color: pink;
+        }
+
+        .wrapper .menu {
+            height: 300px;
+            background-color: rgb(247, 135, 154);
+        }
+
+        .wrapper .main {
+            height: 2000px;
+            background-color: rgb(252, 111, 135);
+        }
+
+        .wrapper .footer {
+            height: 200px;
+            background-color: rgb(247, 74, 103);
+        }
+
+        .slider-bar {
+            height: 200px;
+            width: 80px;
+            background-color: tomato;
+            position: absolute;
+            top: 450px;
+            right: 20px;
+        }
+
+        .slider-bar span {
+            width: 80px;
+            display: none;
+            height: 200px;
+            line-height: 380px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+
+        </div>
+        <div class="menu">
+
+        </div>
+        <div class="main">
+
+        </div>
+        <div class="footer">
+
+        </div>
+
+    </div>
+    <div class="slider-bar">
+        <span>返回顶部</span>
+    </div>
+    <script>
+        var sliderBar = document.querySelector('.slider-bar')
+        var mainBox = document.querySelector('.wrapper .main')
+        var maintop = mainBox.offsetTop//获取main距顶部的距离
+        //获取侧边栏距离顶部的距离
+        var sliderbartop = parseInt(getComputedStyle(sliderBar).getPropertyValue('top'))
+        document.addEventListener('scroll', function () {
+            if (window.pageYOffset >= maintop) {
+                //当页面滚动到main区域时，侧边栏改为固定定位
+                sliderBar.style.position = 'fixed'
+                sliderBar.style.top = (sliderbartop - maintop) + 'px'
+                sliderBar.querySelector('span').style.display = 'inline-block'
+            } else {
+                //当页面回滚，侧边栏设置为绝对定位
+                sliderBar.style.position = 'absolute'
+                sliderBar.style.top = sliderbartop + 'px'
+                sliderBar.querySelector('span').style.display = 'none'
+            }
+        })
+        document.querySelector('span').onclick = function () {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
